@@ -1,0 +1,92 @@
+From d6d769bd7b991e7a5c773aa6ff8992b5cf55385b Mon Sep 17 00:00:00 2001
+From: retake <ysfss@protonmail.com>
+Date: Thu, 12 Nov 2026 02:34:10 +0300
+Subject: [PATCH 2/2] hw/arm/pebble_stm32f4xx_soc: minimal RNG
+
+The STM32F4 RNG was not mapped. Add CR, SR (always ready) and DR from
+the host's RNG. PEBBLE_RNG_FIXED=<n> makes DR alternate between n and
+n + 1000000, for tests that need a known value modulo 10^6, such as a
+Bluetooth passkey, while consecutive values still differ.
+
+Signed-off-by: retake <ysfss@protonmail.com>
+---
+ hw/arm/pebble_stm32f4xx_soc.c | 49 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+diff --git a/hw/arm/pebble_stm32f4xx_soc.c b/hw/arm/pebble_stm32f4xx_soc.c
+index 056bf28..71c6942 100644
+--- a/hw/arm/pebble_stm32f4xx_soc.c
++++ b/hw/arm/pebble_stm32f4xx_soc.c
+@@ -30,6 +30,7 @@
+ #include "hw/sysbus.h"
+ #include "hw/block/flash.h"
+ #include "qemu/log.h"
++#include "qemu/guest-random.h"
+ #include "qemu/error-report.h"
+ #include "system/system.h"
+ #include "system/block-backend.h"
+@@ -109,6 +110,49 @@ static void do_sys_reset(void *opaque, int n, int level)
+     }
+ }
+ 
++/* Minimal STM32F4 RNG: CR, SR with DRDY always set, DR from the host's RNG. */
++static uint32_t s_rng_cr;
++
++static uint64_t stm32f4_rng_read(void *opaque, hwaddr addr, unsigned size)
++{
++    uint32_t v = 0;
++
++    switch (addr) {
++    case 0x0:
++        return s_rng_cr;
++    case 0x4:
++        return 0x1; /* DRDY */
++    case 0x8: {
++        /* PEBBLE_RNG_FIXED=<n> makes reads alternate between n and n + 1000000, for tests
++         * that need a known value modulo 10^6 (a passkey) and still pass the driver's check
++         * that consecutive values differ. */
++        static bool s_rng_toggle;
++        const char *fixed = getenv("PEBBLE_RNG_FIXED");
++        if (fixed) {
++            s_rng_toggle = !s_rng_toggle;
++            return (uint32_t)strtoul(fixed, NULL, 0) + (s_rng_toggle ? 1000000U : 0U);
++        }
++        qemu_guest_getrandom_nofail(&v, sizeof(v));
++        return v;
++    }
++    default:
++        return 0;
++    }
++}
++
++static void stm32f4_rng_write(void *opaque, hwaddr addr, uint64_t val, unsigned size)
++{
++    if (addr == 0x0) {
++        s_rng_cr = val;
++    }
++}
++
++static const MemoryRegionOps stm32f4_rng_ops = {
++    .read = stm32f4_rng_read,
++    .write = stm32f4_rng_write,
++    .endianness = DEVICE_NATIVE_ENDIAN,
++};
++
+ void stm32f4xx_init(
+             ram_addr_t flash_size,        /* in KBytes */
+             ram_addr_t ram_size,          /* in KBytes */
+@@ -506,6 +550,11 @@ void stm32f4xx_init(
+         memory_region_add_subregion(system_memory, 0xC0000000, sdram);
+     }
+ 
++    /* === RNG === */
++    MemoryRegion *rng = g_new(MemoryRegion, 1);
++    memory_region_init_io(rng, NULL, &stm32f4_rng_ops, NULL, "stm32f4xx.rng", 0x400);
++    memory_region_add_subregion(system_memory, 0x50060800, rng);
++
+     /* === Unimplemented stubs === */
+     create_unimplemented_device("FMC",     0xA0000000, 0x1000);
+     create_unimplemented_device("WWDG",    0x40002C00, 0x400);
+-- 
+2.56.0
+

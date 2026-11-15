@@ -1,0 +1,67 @@
+From 4235557515ce53bc2f5a6e7f1e40595c0c2f5a78 Mon Sep 17 00:00:00 2001
+From: retake <ysfss@protonmail.com>
+Date: Thu, 12 Nov 2026 01:57:38 +0300
+Subject: [PATCH 1/2] hw/arm/pebble: Bluetooth UART for a controller emulator
+
+With a fourth serial port, connect it to USART1 and hold PA11 (the
+controller's CTS on snowy and spalding) asserted, so the legacy
+watches' CC2564 transport can be run against an emulated controller.
+
+Signed-off-by: retake <ysfss@protonmail.com>
+---
+ hw/arm/pebble.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/hw/arm/pebble.c b/hw/arm/pebble.c
+index 50d41ce..0da4fef 100644
+--- a/hw/arm/pebble.c
++++ b/hw/arm/pebble.c
+@@ -345,6 +345,14 @@ void pebble_connect_uarts(Stm32Uart *uart[],
+ 
+     stm32_uart_connect(uart[board_config->dbgserial_uart_index],
+                        debug_chr, 0);
++
++    /* serial_hd(3) = Bluetooth HCI on USART1, for an external controller
++     * emulator. Left unconnected without a fourth serial port. */
++    Chardev *bt_chr = serial_hd(3);
++    if (bt_chr && board_config->dbgserial_uart_index != 0 &&
++        board_config->pebble_control_uart_index != 0) {
++        stm32_uart_connect(uart[0], bt_chr, 0);
++    }
+ }
+ 
+ /* ====================================================================
+@@ -556,6 +564,14 @@ void pebble_32f2_init(MachineState *machine,
+                            &error_fatal);
+ }
+ 
++static qemu_irq s_bt_cts;
++static QEMUTimer *s_bt_cts_timer;
++
++static void pebble_bt_cts_assert(void *opaque)
++{
++    qemu_set_irq(s_bt_cts, 0);
++}
++
+ /* ====================================================================
+  * STM32F439-based Pebble init (snowy, emery, chalk/s4)
+  * ==================================================================== */
+@@ -674,6 +690,15 @@ void pebble_32f439_init(MachineState *machine,
+     /* Connect UARTs */
+     pebble_connect_uarts(uart, board_config);
+ 
++    /* With a Bluetooth controller emulator on USART1, hold its CTS (PA11,
++     * active low) asserted, as the CC2564 does while it is awake. GPIO reset
++     * sets every input high, so drive it once the machine runs. */
++    if (serial_hd(3)) {
++        s_bt_cts = qdev_get_gpio_in((DeviceState *)gpio[STM32_GPIOA_INDEX], 11);
++        s_bt_cts_timer = timer_new_ms(QEMU_CLOCK_VIRTUAL, pebble_bt_cts_assert, NULL);
++        timer_mod(s_bt_cts_timer, qemu_clock_get_ms(QEMU_CLOCK_VIRTUAL) + 1);
++    }
++
+     /* Init buttons */
+     pebble_init_buttons(gpio, board_config->button_map);
+ 
+-- 
+2.56.0
+

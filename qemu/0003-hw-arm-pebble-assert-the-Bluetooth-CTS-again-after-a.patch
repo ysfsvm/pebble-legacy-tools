@@ -1,0 +1,52 @@
+From c70c54632b03a5652d2472fb5cd7389c07fa8580 Mon Sep 17 00:00:00 2001
+From: retake <ysfss@protonmail.com>
+Date: Fri, 13 Nov 2026 01:12:19 +0300
+Subject: [PATCH 3/4] hw/arm/pebble: assert the Bluetooth CTS again after a
+ system reset
+
+A system reset sets the GPIOs back to inputs, high, and the controller emulator's CTS stayed deasserted: the firmware found no controller after a restart. Re-arm the one-shot timer from a reset handler.
+
+Assisted-by: LLM
+
+Signed-off-by: retake <ysfss@protonmail.com>
+---
+ hw/arm/pebble.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/hw/arm/pebble.c b/hw/arm/pebble.c
+index 0da4fef..55bb258 100644
+--- a/hw/arm/pebble.c
++++ b/hw/arm/pebble.c
+@@ -25,6 +25,7 @@
+  */
+ 
+ #include "qemu/osdep.h"
++#include "system/reset.h"
+ #include "qapi/error.h"
+ #include "hw/boards.h"
+ #ifdef HW_ARM_MACHINES_QOM_H
+@@ -572,6 +573,13 @@ static void pebble_bt_cts_assert(void *opaque)
+     qemu_set_irq(s_bt_cts, 0);
+ }
+ 
++/* A system reset sets the GPIOs back to their reset state: assert CTS again
++ * once the machine runs, as after power up. */
++static void pebble_bt_cts_reset(void *opaque)
++{
++    timer_mod(s_bt_cts_timer, qemu_clock_get_ms(QEMU_CLOCK_VIRTUAL) + 1);
++}
++
+ /* ====================================================================
+  * STM32F439-based Pebble init (snowy, emery, chalk/s4)
+  * ==================================================================== */
+@@ -697,6 +705,7 @@ void pebble_32f439_init(MachineState *machine,
+         s_bt_cts = qdev_get_gpio_in((DeviceState *)gpio[STM32_GPIOA_INDEX], 11);
+         s_bt_cts_timer = timer_new_ms(QEMU_CLOCK_VIRTUAL, pebble_bt_cts_assert, NULL);
+         timer_mod(s_bt_cts_timer, qemu_clock_get_ms(QEMU_CLOCK_VIRTUAL) + 1);
++        qemu_register_reset(pebble_bt_cts_reset, NULL);
+     }
+ 
+     /* Init buttons */
+-- 
+2.56.0
+

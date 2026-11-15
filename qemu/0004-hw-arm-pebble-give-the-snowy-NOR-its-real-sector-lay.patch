@@ -1,0 +1,66 @@
+From 7be1bdf340e22327461600ddae02c2368d6fe7cb Mon Sep 17 00:00:00 2001
+From: retake <ysfss@protonmail.com>
+Date: Fri, 13 Nov 2026 04:10:19 +0300
+Subject: [PATCH 4/4] hw/arm/pebble: give the snowy NOR its real sector layout
+
+The S29VS/MX29VS128F is bottom-boot: four 32 KiB sectors, then 127 of 128 KiB. The uniform 32 KiB layout erased only a quarter of each 128 KiB sector the firmware erases, which corrupted rewritten files.
+
+Assisted-by: LLM
+
+Signed-off-by: retake <ysfss@protonmail.com>
+---
+ hw/arm/pebble.c | 38 ++++++++++++++++++++++++--------------
+ 1 file changed, 24 insertions(+), 14 deletions(-)
+
+diff --git a/hw/arm/pebble.c b/hw/arm/pebble.c
+index 55bb258..c90b751 100644
+--- a/hw/arm/pebble.c
++++ b/hw/arm/pebble.c
+@@ -621,20 +621,30 @@ void pebble_32f439_init(MachineState *machine,
+             fprintf(stderr, "WARNING: pflash drive 'spi-flash' not found, "
+                             "flash will be empty\n");
+         }
+-        pflash_cfi02_register(0x60000000,
+-                              "pebble.spi_flash",
+-                              flash_size_bytes,
+-                              blk,
+-                              sector_size,
+-                              1,      /* nb_mappings */
+-                              2,      /* width (16-bit) */
+-                              0x00c2, /* id0: Macronix */
+-                              0x007e, /* id1 */
+-                              0x0065, /* id2 */
+-                              0x0001, /* id3 */
+-                              0x555,  /* unlock_addr0 */
+-                              0x2AA,  /* unlock_addr1 */
+-                              0);     /* big_endian = false */
++        /* The S29VS/MX29VS128F is bottom-boot: four 32 KiB sectors, then 127
++         * of 128 KiB. A uniform 32 KiB layout erased only a quarter of each
++         * 128 KiB sector the firmware erases. */
++        (void)sector_size;
++        DeviceState *dev = qdev_new(TYPE_PFLASH_CFI02);
++        if (blk) {
++            qdev_prop_set_drive(dev, "drive", blk);
++        }
++        qdev_prop_set_uint32(dev, "num-blocks0", 4);
++        qdev_prop_set_uint32(dev, "sector-length0", 32 * 1024);
++        qdev_prop_set_uint32(dev, "num-blocks1", (flash_size_bytes - 4 * 32 * 1024) / (128 * 1024));
++        qdev_prop_set_uint32(dev, "sector-length1", 128 * 1024);
++        qdev_prop_set_uint8(dev, "width", 2);
++        qdev_prop_set_uint8(dev, "mappings", 1);
++        qdev_prop_set_uint8(dev, "big-endian", 0);
++        qdev_prop_set_uint16(dev, "id0", 0x00c2); /* Macronix */
++        qdev_prop_set_uint16(dev, "id1", 0x007e);
++        qdev_prop_set_uint16(dev, "id2", 0x0065);
++        qdev_prop_set_uint16(dev, "id3", 0x0001);
++        qdev_prop_set_uint16(dev, "unlock-addr0", 0x555);
++        qdev_prop_set_uint16(dev, "unlock-addr1", 0x2AA);
++        qdev_prop_set_string(dev, "name", "pebble.spi_flash");
++        sysbus_realize_and_unref(SYS_BUS_DEVICE(dev), &error_fatal);
++        sysbus_mmio_map(SYS_BUS_DEVICE(dev), 0, 0x60000000);
+     }
+ 
+ 
+-- 
+2.56.0
+
