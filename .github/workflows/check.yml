@@ -1,0 +1,46 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.13"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install
+        run: pip install '.[dev]'
+
+      - name: Lint
+        run: |
+          ruff check
+          ruff format --check
+
+      - name: Shell scripts parse
+        run: |
+          for script in src/plt/data/*.sh; do bash -n "$script"; done
+
+      - name: Tests
+        run: pytest
+
+      - name: Command help
+        run: |
+          plt --help
+          plt --version
+
+      - name: Build the package
+        run: python -m build
