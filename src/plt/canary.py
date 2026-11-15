@@ -1,0 +1,204 @@
+# SPDX-FileCopyrightText: 2026 Brian Silvestri
+# SPDX-License-Identifier: Apache-2.0
+"""Boot a silk or snowy build in QEMU and check the stock-owned flash regions survive.
+
+usage: python -m plt.canary --qemu QEMU [options]   (from the firmware worktree)
+
+Fills PRF, stock shared PRF storage and MFG info in a copy of the external
+flash image with random bytes, boots the firmware for a while, then checks
+those regions are byte-for-byte unchanged. Exits non-zero if any changed or
+the firmware hit a flash guard assertion.
+
+Targets:
+  qemu_silk (default): the flint emulator machine, firmware loaded as ELF.
+  silk (--machine pebble-silk-bb): the emulated STM32F412, booted through
+    the stock silk bootloader.
+  snowy (--board snowy --machine pebble-snowy-bb): the emulated STM32F439
+    with its parallel NOR, booted through the stock snowy bootloader.
+  spalding (--board spalding --machine pebble-s4-bb): the same, with the
+    round display, booted through the stock spalding bootloader.
+"""
+
+import argparse
+import os
+import random
+import shutil
+import socket
+import struct
+import subprocess
+import sys
+import tempfile
+import time
+import zlib
+from pathlib import Path
+
+from plt.stock_boot import BOARDS, build_stock_images
+
+GUARD_MESSAGE = b"protected flash"
+
+
+def stock_v2_sprf(rng):
+    """A stock snowy (v2) shared PRF storage entry with a legacy BLE pairing.
+
+    Root keys and pairing values are random. The fields are as the stock
+    firmware laid them out; the firmware must import them without writing the
+    stock region.
+    """
+    er = rng.randbytes(16)
+    ir = rng.randbytes(16)
+    name = b"canary".ljust(20, b"\0")
+    ble = (
+        b"phone".ljust(20, b"\0")
+        + struct.pack(
+            "<HH", rng.getrandbits(16), rng.getrandbits(16)
+        )  # local EDIV, DIV
+        + rng.randbytes(16)  # remote LTK
+        + struct.pack("<QH", rng.getrandbits(64), rng.getrandbits(16))  # rand, EDIV
+        + rng.randbytes(16)  # IRK
+        + rng.randbytes(6)
+        + b"\x00\x00"  # identity: public LE address
+        + rng.randbytes(16)  # CSRK
+        + bytes([0b0111])  # local enc, remote enc, remote identity valid
+    )
+    assert len(ble) == 91
+    data = struct.pack("<I", 3) + name + er + ir + ble + bytes(43) + b"\x01"
+    assert len(data) == 191
+    return data
+
+
+def ppm_to_png(ppm_path, png_path):
+    data = Path(ppm_path).read_bytes()
+    _header, width_height, _maxval, pixels = data.split(b"\n", 3)
+    width, height = map(int, width_height.split())
+    raw = b"".join(
+        b"\x00" + pixels[y * width * 3 : (y + 1) * width * 3] for y in range(height)
+    )
+
+    def chunk(kind, body):
+        return (
+            struct.pack(">I", len(body))
+            + kind
+            + body
+            + struct.pack(">I", zlib.crc32(kind + body) & 0xFFFFFFFF)
+        )
+
+    with open(png_path, "wb") as f:
+        f.write(b"\x89PNG\r\n\x1a\n")
+        f.write(chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0)))
+        f.write(chunk(b"IDAT", zlib.compress(raw)))
+        f.write(chunk(b"IEND", b""))
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        prog="python -m plt.canary",
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        "--board", choices=BOARDS, default="silk", help="flash layout and bootloader"
+    )
+    parser.add_argument(
+        "--build-dir", default="build-silk", help="build directory to boot"
+    )
+    parser.add_argument("--qemu", required=True, help="path to the QEMU binary")
+    parser.add_argument("--machine", default="pebble-flint", help="QEMU machine")
+    parser.add_argument(
+        "--seconds", type=int, default=40, help="how long to run (default 40)"
+    )
+    parser.add_argument("--screenshot", help="write a PNG of the screen here")
+    parser.add_argument("--console", help="copy the console log here")
+    parser.add_argument(
+        "--stock-sprf-v2",
+        action="store_true",
+        help="put a stock v2 shared PRF storage entry in place (snowy, spalding)",
+    )
+    parser.add_argument(
+        "--bt-serial",
+        help="QEMU chardev for the Bluetooth UART (USART1), e.g. tcp:127.0.0.1:5556; needs a QEMU "
+        "that connects a fourth serial port to it",
+    )
+    args = parser.parse_args()
+
+    board = BOARDS[args.board]
+    stock_hw = args.machine in ("pebble-silk-bb", "pebble-snowy-bb", "pebble-s4-bb")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        spi = os.path.join(tmp, "spi.bin")
+        if stock_hw:
+            micro_bin, image = build_stock_images(board, args.build_dir, tmp)
+            boot_args = ["-cpu", "cortex-m4", "-kernel", micro_bin]
+        else:
+            shutil.copyfile(os.path.join(args.build_dir, "qemu_spi_flash.bin"), spi)
+            image = bytearray(Path(spi).read_bytes())
+            boot_args = ["-kernel", os.path.join(args.build_dir, "pebbleos.elf")]
+        rng = random.Random(0x5111C)
+        for _name, lo, hi in board["protected"]:
+            image[lo:hi] = rng.randbytes(hi - lo)
+        if args.stock_sprf_v2:
+            sprf = stock_v2_sprf(rng)
+            lo = {name: lo for name, lo, _hi in board["protected"]}[
+                "stock shared PRF storage"
+            ]
+            image[lo : lo + len(sprf)] = sprf
+        Path(spi).write_bytes(image)
+
+        console = os.path.join(tmp, "console.log")
+        mon = os.path.join(tmp, "mon.sock")
+        qemu = subprocess.Popen(
+            [
+                args.qemu,
+                "-rtc",
+                "base=localtime",
+                "-monitor",
+                f"unix:{mon},server=on,wait=off",
+                "-serial",
+                "null",
+                "-serial",
+                "null",
+                "-serial",
+                f"file:{console}",
+                *(["-serial", args.bt_serial] if args.bt_serial else []),
+                "-machine",
+                args.machine,
+                *boot_args,
+                *board["flash_args"](spi),
+                "-display",
+                "none",
+            ]
+        )
+        time.sleep(args.seconds)
+
+        if args.screenshot:
+            ppm = os.path.join(tmp, "screen.ppm")
+            s = socket.socket(socket.AF_UNIX)
+            s.connect(mon)
+            s.sendall(f"screendump {ppm}\n".encode())
+            time.sleep(1)
+            s.close()
+            if os.path.exists(ppm):
+                ppm_to_png(ppm, args.screenshot)
+
+        qemu.terminate()
+        qemu.wait()
+
+        after = Path(spi).read_bytes()
+        ok = True
+        for name, lo, hi in board["protected"]:
+            same = after[lo:hi] == image[lo:hi]
+            ok &= same
+            print(f"{name:26s} {'unchanged' if same else 'MODIFIED'}")
+
+        log = Path(console).read_bytes()
+        if args.console:
+            shutil.copyfile(console, args.console)
+        guard_hits = log.count(GUARD_MESSAGE)
+        print(f"flash guard assertions     {guard_hits}")
+        ok &= guard_hits == 0
+
+    print("PASS" if ok else "FAIL")
+    return 0 if ok else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
