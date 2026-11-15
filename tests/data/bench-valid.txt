@@ -1,0 +1,331 @@
+02:00:00   0 init.c:43 *** Booting PebbleOS %s ***  <- `v4.47.0-23-g6c0ba5c5f2`
+12:41:17 100 main.c:77 MFG RTC frequency %lu mHz  <- 0
+12:41:17   0 debug.c:20 Platform: %u, hw: %s, sn: %s  <- 8 `snowy23` `X00000000000`
+12:41:17   0 debug.c:26 BUILD ID: %s  <- `c3327c72676646d4e1838a400a92f1dd4c37525d`
+12:41:17  50 reboot_reason.c:139 Safely rebooted due to SoftwareUpdate
+12:41:17 100 debug_reboot_reason.c:150 MCU reset reason mask: 0x%x  <- a
+12:43:50 100 perf_probe.c:674 PERF bench start  <- 
+12:43:55 100 perf_probe.c:617 PERF bench: bluetooth stopped  <- 
+12:44:15 100 perf_probe.c:623 PERF run %u start  <- 1
+12:44:15 100 perf_probe.c:578 PERF script start  <- 
+12:44:16 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 0 0 `TimeStyle` `?`
+12:44:16 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 0 0 `?`
+12:44:17 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 0 0 0 0
+12:44:17 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 0 1 `TimeStyle` `?`
+12:44:17 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 0 1 `?`
+12:44:17 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 1 0 0 0
+12:44:17 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 0 2 `TimeStyle` `?`
+12:44:17 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 0 2 `?`
+12:44:18 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 2 0 0 0
+12:44:18 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 1 0 `TimeStyle` `?`
+12:44:18 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 1 0 `?`
+12:44:20 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 1 0 94 19e 8
+12:44:20 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 0 `Launcher` `?`
+12:44:20 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 0 `?`
+12:44:20 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 0 5e 164 7
+12:44:20 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 1 `Launcher` `?`
+12:44:20 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 1 `?`
+12:44:20 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 1 0 19a 9
+12:44:20 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 2 `Launcher` `?`
+12:44:20 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 2 `?`
+12:44:21 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 2 5e 167 6
+12:44:21 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 3 `Launcher` `?`
+12:44:21 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 3 `?`
+12:44:21 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 3 23 18f 7
+12:44:21 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 4 `Launcher` `?`
+12:44:21 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 4 `?`
+12:44:22 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 4 18 18f 7
+12:44:22 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 5 `Launcher` `?`
+12:44:22 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 5 `?`
+12:44:22 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 5 24 183 7
+12:44:22 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 0 `Launcher` `?`
+12:44:22 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 0 `?`
+12:44:23 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 0 17 19a 8
+12:44:23 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 1 `Launcher` `?`
+12:44:23 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 1 `?`
+12:44:23 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 1 6a 177 6
+12:44:23 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 2 `Launcher` `?`
+12:44:23 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 2 `?`
+12:44:23 100 perf_probe.c:272 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- a 47 3570 18 24 4b7
+12:44:23 100 perf_probe.c:276 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- a d 111 914
+12:44:23 100 perf_probe.c:279 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- a 36 17 2c 0 7f
+12:44:23 100 perf_probe.c:283 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- a 15f 2418 0 0
+12:44:23 100 perf_probe.c:288 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- a bd9f 6b2 5f90 5 36d5
+12:44:23 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 2 0 168 7
+12:44:23 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 3 `Launcher` `?`
+12:44:23 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 3 `?`
+12:44:24 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 3 24 170 7
+12:44:24 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 4 `Launcher` `?`
+12:44:24 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 4 `?`
+12:44:24 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 4 23 182 8
+12:44:24 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 5 `Launcher` `?`
+12:44:24 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 5 `?`
+12:44:25 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 5 0 b0 4
+12:44:25 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 0 `Launcher` `?`
+12:44:25 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 0 `?`
+12:44:25 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 0 5d 81 2
+12:44:25 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 1 `Launcher` `?`
+12:44:25 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 1 `?`
+12:44:25 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 1 23 81 3
+12:44:25 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 2 `Launcher` `?`
+12:44:25 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 2 `?`
+12:44:25 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 2 23 81 3
+12:44:25 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 3 `Launcher` `?`
+12:44:25 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 3 `?`
+12:44:25 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 3 23 52 2
+12:44:25 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 4 `Launcher` `?`
+12:44:25 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 4 `?`
+12:44:25 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 4 0 6a 3
+12:44:25 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 5 `Launcher` `?`
+12:44:25 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 5 `?`
+12:44:25 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 5 17 81 3
+12:44:25 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 6 `Launcher` `?`
+12:44:25 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 6 `?`
+12:44:26 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 6 2f 5e 2
+12:44:26 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 7 `Launcher` `?`
+12:44:26 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 7 `?`
+12:44:26 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 7 c 69 3
+12:44:26 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 8 `Launcher` `?`
+12:44:26 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 8 `?`
+12:44:26 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 8 2f 5e 2
+12:44:26 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 9 `Launcher` `?`
+12:44:26 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 9 `?`
+12:44:26 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 9 0 69 4
+12:44:26 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 0 `Launcher` `?`
+12:44:26 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 0 `?`
+12:44:26 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 0 0 81 5
+12:44:26 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 1 `Launcher` `?`
+12:44:26 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 1 `?`
+12:44:26 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 1 c 6d 4
+12:44:26 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 2 `Launcher` `?`
+12:44:26 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 2 `?`
+12:44:26 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 2 b 75 4
+12:44:26 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 3 `Launcher` `?`
+12:44:26 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 3 `?`
+12:44:27 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 3 c 76 4
+12:44:27 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 4 `Launcher` `?`
+12:44:27 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 4 `?`
+12:44:27 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 4 17 69 3
+12:44:27 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 5 `Launcher` `?`
+12:44:27 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 5 `?`
+12:44:27 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 5 b 75 3
+12:44:27 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 6 `Launcher` `?`
+12:44:27 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 6 `?`
+12:44:27 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 6 18 81 3
+12:44:27 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 7 `Launcher` `?`
+12:44:27 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 7 `?`
+12:44:27 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 7 2f 5e 2
+12:44:27 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 8 `Launcher` `?`
+12:44:27 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 8 `?`
+12:44:27 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 8 2f 69 2
+12:44:27 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 9 `Launcher` `?`
+12:44:27 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 9 `?`
+12:44:27 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 9 b 69 3
+12:44:27 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 6 0 `Launcher` `?`
+12:44:27 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 6 0 `?`
+12:44:28 100 perf_probe.c:272 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- b 65 1394 19 23 148
+12:44:28 100 perf_probe.c:276 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- b 18 19 5d
+12:44:28 100 perf_probe.c:279 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- b 63 9 0 0 eb
+12:44:28 100 perf_probe.c:283 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- b 172 11d4 0 0
+12:44:28 100 perf_probe.c:288 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- b 971b 555 5f10 367 363e
+12:44:31 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 6 0 c 252 13
+12:44:31 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 7 0 `Settings` `?`
+12:44:31 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 7 0 `?`
+12:44:33 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 7 0 3e 232 10
+12:44:33 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 8 0 `Launcher` `?`
+12:44:33 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 8 0 `?`
+12:44:33 100 perf_probe.c:272 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- c 13 1394 19 23 4a4
+12:44:33 100 perf_probe.c:276 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- c 2 8e df
+12:44:33 100 perf_probe.c:279 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- c 5d 47 6 0 28
+12:44:33 100 perf_probe.c:283 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- c 43 2abe 0 0
+12:44:33 100 perf_probe.c:288 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- c 1405 665 56f1 c37 26de
+12:44:35 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 8 0 df 204 8
+12:44:35 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 9 0 `TimeStyle` `?`
+12:44:35 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 9 0 `?`
+12:44:37 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 9 0 8c 217 d
+12:44:37 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- a 0 `Timeline Future` `?`
+12:44:37 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- a 0 `?`
+12:44:38 100 perf_probe.c:272 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- d 1b 1393 1c 24 89f
+12:44:38 100 perf_probe.c:276 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- d 2 b1 d7
+12:44:38 100 perf_probe.c:279 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- d 63 49 0 0 27
+12:44:38 100 perf_probe.c:283 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- d 4a 2dd6 0 0
+12:44:38 100 perf_probe.c:288 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- d 13ae 792 5881 f01 2a32
+12:44:39 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- a 0 d7 1ec 9
+12:44:39 100 perf_probe.c:504 PERF script done  <- 
+12:44:39 100 perf_probe.c:382 PERF profile samples %lu in interrupts %lu outside %lu  <- 57bd 463 33
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 80bb400 3128 80ba400 3e8 8043400 2ed
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8080000 2b7 809b800 158 807e000 143
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 807ec00 122 80b9800 121 8042000 106
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8097800 ff 8005400 ed 8052c00 de
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 809b400 cc 807f800 ac 80ba800 ac
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 809a800 a6 807dc00 83 8029000 7f
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 803d800 6d 80aa400 69 807d800 68
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 80bb800 62 803dc00 61 803f800 61
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 80aa800 5b 809c000 5a 8043800 50
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8044000 4d 807e400 4d 8096800 4b
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 808a800 4a 8040c00 49 809c400 45
+12:44:39 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8005800 42 8043c00 42 8059800 40
+12:44:39 100 perf_probe.c:629 PERF run %u done  <- 1
+12:44:43 100 perf_probe.c:265 PERF %lu idle %lu ms: run %lu wfi %lu stop %lu pct, clock irq %lu reprog %lu  <- e 1394 34 2d 2f 3c 239
+12:44:54 100 perf_probe.c:623 PERF run %u start  <- 2
+12:44:54 100 perf_probe.c:578 PERF script start  <- 
+12:44:54 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 0 0 `TimeStyle` `?`
+12:44:54 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 0 0 `?`
+12:44:55 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 0 0 0 0
+12:44:55 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 0 1 `TimeStyle` `?`
+12:44:55 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 0 1 `?`
+12:44:56 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 1 0 0 0
+12:44:56 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 0 2 `TimeStyle` `?`
+12:44:56 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 0 2 `?`
+12:44:56 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 2 0 0 0
+12:44:56 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 1 0 `TimeStyle` `?`
+12:44:56 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 1 0 `?`
+12:44:58 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 1 0 94 19e 8
+12:44:58 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 0 `Launcher` `?`
+12:44:58 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 0 `?`
+12:44:58 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 0 52 164 7
+12:44:58 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 1 `Launcher` `?`
+12:44:58 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 1 `?`
+12:44:59 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 1 0 177 8
+12:44:59 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 2 `Launcher` `?`
+12:44:59 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 2 `?`
+12:44:59 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 2 0 167 7
+12:44:59 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 3 `Launcher` `?`
+12:44:59 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 3 `?`
+12:45:00 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 3 17 183 7
+12:45:00 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 4 `Launcher` `?`
+12:45:00 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 4 `?`
+12:45:00 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 4 17 183 7
+12:45:00 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 2 5 `Launcher` `?`
+12:45:00 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 2 5 `?`
+12:45:00 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 5 18 183 7
+12:45:00 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 0 `Launcher` `?`
+12:45:00 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 0 `?`
+12:45:01 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 0 c 170 7
+12:45:01 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 1 `Launcher` `?`
+12:45:01 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 1 `?`
+12:45:01 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 1 24 18f 7
+12:45:01 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 2 `Launcher` `?`
+12:45:01 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 2 `?`
+12:45:02 100 perf_probe.c:272 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- f 47 474e 19 24 4ab
+12:45:02 100 perf_probe.c:276 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- f d 100 918
+12:45:02 100 perf_probe.c:279 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- f 29 12 39 0 7d
+12:45:02 100 perf_probe.c:283 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- f 16d 2439 0 0
+12:45:02 100 perf_probe.c:288 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- f bdc8 6b3 5f9c 5 36e5
+12:45:02 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 2 23 17b 7
+12:45:02 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 3 `Launcher` `?`
+12:45:02 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 3 `?`
+12:45:02 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 3 23 16f 7
+12:45:02 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 4 `Launcher` `?`
+12:45:02 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 4 `?`
+12:45:02 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 4 23 18e 8
+12:45:02 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 3 5 `Launcher` `?`
+12:45:02 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 3 5 `?`
+12:45:03 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 5 c b0 4
+12:45:03 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 0 `Launcher` `?`
+12:45:03 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 0 `?`
+12:45:03 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 0 5e 81 2
+12:45:03 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 1 `Launcher` `?`
+12:45:03 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 1 `?`
+12:45:03 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 1 23 81 3
+12:45:03 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 2 `Launcher` `?`
+12:45:03 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 2 `?`
+12:45:03 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 2 23 81 3
+12:45:03 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 3 `Launcher` `?`
+12:45:03 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 3 `?`
+12:45:03 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 3 23 5e 2
+12:45:03 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 4 `Launcher` `?`
+12:45:03 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 4 `?`
+12:45:04 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 4 0 69 3
+12:45:04 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 5 `Launcher` `?`
+12:45:04 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 5 `?`
+12:45:04 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 5 18 81 3
+12:45:04 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 6 `Launcher` `?`
+12:45:04 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 6 `?`
+12:45:04 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 6 2f 5e 2
+12:45:04 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 7 `Launcher` `?`
+12:45:04 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 7 `?`
+12:45:04 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 7 3a 69 2
+12:45:04 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 8 `Launcher` `?`
+12:45:04 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 8 `?`
+12:45:04 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 8 b 80 4
+12:45:04 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 4 9 `Launcher` `?`
+12:45:04 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 4 9 `?`
+12:45:04 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 9 23 81 4
+12:45:04 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 0 `Launcher` `?`
+12:45:04 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 0 `?`
+12:45:04 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 0 17 81 4
+12:45:04 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 1 `Launcher` `?`
+12:45:04 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 1 `?`
+12:45:05 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 1 c 76 4
+12:45:05 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 2 `Launcher` `?`
+12:45:05 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 2 `?`
+12:45:05 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 2 c 75 4
+12:45:05 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 3 `Launcher` `?`
+12:45:05 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 3 `?`
+12:45:05 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 3 b 81 4
+12:45:05 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 4 `Launcher` `?`
+12:45:05 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 4 `?`
+12:45:05 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 4 18 75 3
+12:45:05 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 5 `Launcher` `?`
+12:45:05 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 5 `?`
+12:45:05 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 5 17 81 3
+12:45:05 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 6 `Launcher` `?`
+12:45:05 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 6 `?`
+12:45:05 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 6 2f 69 2
+12:45:05 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 7 `Launcher` `?`
+12:45:05 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 7 `?`
+12:45:05 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 7 b 75 3
+12:45:05 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 8 `Launcher` `?`
+12:45:05 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 8 `?`
+12:45:06 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 8 18 75 3
+12:45:06 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 5 9 `Launcher` `?`
+12:45:06 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 5 9 `?`
+12:45:06 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 9 17 81 3
+12:45:06 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 6 0 `Launcher` `?`
+12:45:06 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 6 0 `?`
+12:45:07 100 perf_probe.c:272 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- 10 64 1394 19 24 148
+12:45:07 100 perf_probe.c:276 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- 10 18 1c 5e
+12:45:07 100 perf_probe.c:279 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- 10 63 a 0 0 eb
+12:45:07 100 perf_probe.c:283 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- 10 171 12f9 0 0
+12:45:07 100 perf_probe.c:288 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- 10 980d 557 5f03 399 3610
+12:45:10 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 6 0 18 22f 12
+12:45:10 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 7 0 `Settings` `?`
+12:45:10 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 7 0 `?`
+12:45:11 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 7 0 3e 22e 10
+12:45:11 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 8 0 `Launcher` `?`
+12:45:11 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 8 0 `?`
+12:45:12 100 perf_probe.c:272 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- 11 13 138c 17 27 4a4
+12:45:12 100 perf_probe.c:276 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- 11 2 8e df
+12:45:12 100 perf_probe.c:279 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- 11 5d 47 6 0 27
+12:45:12 100 perf_probe.c:283 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- 11 44 2a93 0 0
+12:45:12 100 perf_probe.c:288 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- 11 1461 6ab 56f3 8ec 26e9
+12:45:13 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 8 0 df 204 8
+12:45:13 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- 9 0 `TimeStyle` `?`
+12:45:13 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- 9 0 `?`
+12:45:15 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 9 0 79 20b c
+12:45:15 100 perf_probe.c:481 PERF screen %u/%u: app %s window %s  <- a 0 `Timeline Future` `?`
+12:45:15 100 perf_probe.c:485 PERF screen %u/%u: modal %s  <- a 0 `?`
+12:45:17 100 perf_probe.c:272 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- 12 1a 1393 1b 23 8ab
+12:45:17 100 perf_probe.c:276 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- 12 2 aa db
+12:45:17 100 perf_probe.c:279 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- 12 63 4a 0 0 28
+12:45:17 100 perf_probe.c:283 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- 12 46 2ed6 0 0
+12:45:17 100 perf_probe.c:288 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- 12 11a0 767 57bd c74 28c9
+12:45:17 100 perf_probe.c:452 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- a 0 db 1f8 9
+12:45:17 100 perf_probe.c:504 PERF script done  <- 
+12:45:17 100 perf_probe.c:382 PERF profile samples %lu in interrupts %lu outside %lu  <- 57bd 45d 30
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 80bb400 315b 80ba400 3e8 8043400 2ee
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8080000 2b5 807e000 13a 809b800 12e
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 807ec00 127 80b9800 11f 8097800 fb
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8005400 f5 8042000 f1 8052c00 e4
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 809b400 d7 809a800 c5 807f800 bf
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 80ba800 b6 807dc00 99 803d800 82
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8029000 76 80aa400 71 807d800 6b
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 803f800 64 8096800 64 80bb800 60
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 803dc00 5c 80aa800 5a 807e400 57
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 809a000 56 809c000 55 8043800 4b
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8005800 48 8040c00 46 8044000 46
+12:45:17 100 perf_probe.c:399 PERF pc %lx %lu %lx %lu %lx %lu  <- 8043c00 42 809c800 41 807c400 39
+12:45:17 100 perf_probe.c:629 PERF run %u done  <- 2
+12:45:22 100 perf_probe.c:265 PERF %lu idle %lu ms: run %lu wfi %lu stop %lu pct, clock irq %lu reprog %lu  <- 13 1394 34 2c 2f 3d 204
+12:46:07 100 perf_probe.c:641 PERF bench done  <- 

@@ -1,0 +1,396 @@
+02:00:00   0 init.c:43 *** Booting PebbleOS %s ***  <- `v4.47.0-24-g72a0d241f1`
+17:25:53 100 main.c:77 MFG RTC frequency %lu mHz  <- 0
+17:25:53   0 debug.c:20 Platform: %u, hw: %s, sn: %s  <- 8 `snowy23` `X00000000000`
+17:25:53   0 debug.c:26 BUILD ID: %s  <- `5e4fd3542f7eb0c8f31f27db9bef110eaaea9e75`
+17:25:53  50 reboot_reason.c:139 Safely rebooted due to SoftwareUpdate
+17:25:53 100 debug_reboot_reason.c:150 MCU reset reason mask: 0x%x  <- a
+17:26:36 100 perf_probe.c:786 PERF bench start  <- 
+17:26:42 100 perf_probe.c:729 PERF bench: bluetooth stopped  <- 
+17:27:41 100 perf_probe.c:735 PERF run %u start  <- 2
+17:27:41 100 perf_probe.c:690 PERF script start  <- 
+17:27:41 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 0 0 `TimeStyle` `?`
+17:27:41 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 0 0 `?`
+17:27:42 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 0 0 0 0
+17:27:42 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 0 1 `TimeStyle` `?`
+17:27:42 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 0 1 `?`
+17:27:43 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 1 0 0 0
+17:27:43 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 0 2 `TimeStyle` `?`
+17:27:43 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 0 2 `?`
+17:27:44 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 0 2 0 0 0
+17:27:44 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 1 0 `TimeStyle` `?`
+17:27:44 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 1 0 `?`
+17:27:45 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 1 0 91 19e 8
+17:27:45 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 2 0 `Launcher` `?`
+17:27:45 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 2 0 `?`
+17:27:46 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 0 5e 177 8
+17:27:46 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 2 1 `Launcher` `?`
+17:27:46 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 2 1 `?`
+17:27:46 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 1 0 160 8
+17:27:46 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 2 2 `Launcher` `?`
+17:27:46 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 2 2 `?`
+17:27:46 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 2 17 182 8
+17:27:46 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 2 3 `Launcher` `?`
+17:27:46 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 2 3 `?`
+17:27:47 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 3 17 19a 8
+17:27:47 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 2 4 `Launcher` `?`
+17:27:47 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 2 4 `?`
+17:27:47 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 4 69 182 6
+17:27:47 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 2 5 `Launcher` `?`
+17:27:47 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 2 5 `?`
+17:27:48 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 2 5 17 177 7
+17:27:48 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 3 0 `Launcher` `?`
+17:27:48 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 3 0 `?`
+17:27:48 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 0 0 173 7
+17:27:48 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 3 1 `Launcher` `?`
+17:27:48 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 3 1 `?`
+17:27:48 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 1 23 15f 6
+17:27:48 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 3 2 `Launcher` `?`
+17:27:48 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 3 2 `?`
+17:27:49 100 perf_probe.c:287 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- 11 49 4b2e 18 23 4b7
+17:27:49 100 perf_probe.c:291 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- 11 d 106 915
+17:27:49 100 perf_probe.c:294 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- 11 26 10 3d 0 7d
+17:27:49 100 perf_probe.c:298 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- 11 159 23bd 0 0
+17:27:49 100 perf_probe.c:303 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- 11 bbb8 6c5 5e49 5 35af
+17:27:49 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 2 0 187 8
+17:27:49 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 3 3 `Launcher` `?`
+17:27:49 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 3 3 `?`
+17:27:49 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 3 3b 177 7
+17:27:49 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 3 4 `Launcher` `?`
+17:27:49 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 3 4 `?`
+17:27:50 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 4 c 17f 9
+17:27:50 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 3 5 `Launcher` `?`
+17:27:50 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 3 5 `?`
+17:27:50 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 3 5 2f c8 4
+17:27:50 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 0 `Launcher` `?`
+17:27:50 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 0 `?`
+17:27:50 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 0 5d 5d 1
+17:27:50 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 1 `Launcher` `?`
+17:27:50 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 1 `?`
+17:27:50 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 1 0 75 4
+17:27:50 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 2 `Launcher` `?`
+17:27:50 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 2 `?`
+17:27:51 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 2 17 69 3
+17:27:51 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 3 `Launcher` `?`
+17:27:51 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 3 `?`
+17:27:51 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 3 c 6a 3
+17:27:51 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 4 `Launcher` `?`
+17:27:51 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 4 `?`
+17:27:51 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 4 c 75 3
+17:27:51 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 5 `Launcher` `?`
+17:27:51 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 5 `?`
+17:27:51 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 5 17 81 3
+17:27:51 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 6 `Launcher` `?`
+17:27:51 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 6 `?`
+17:27:51 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 6 2f 6a 2
+17:27:51 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 7 `Launcher` `?`
+17:27:51 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 7 `?`
+17:27:51 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 7 c 75 3
+17:27:51 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 8 `Launcher` `?`
+17:27:51 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 8 `?`
+17:27:51 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 8 3b 69 2
+17:27:51 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 4 9 `Launcher` `?`
+17:27:51 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 4 9 `?`
+17:27:52 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 4 9 0 69 4
+17:27:52 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 0 `Launcher` `?`
+17:27:52 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 0 `?`
+17:27:52 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 0 0 81 5
+17:27:52 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 1 `Launcher` `?`
+17:27:52 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 1 `?`
+17:27:52 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 1 17 75 4
+17:27:52 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 2 `Launcher` `?`
+17:27:52 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 2 `?`
+17:27:52 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 2 c 76 4
+17:27:52 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 3 `Launcher` `?`
+17:27:52 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 3 `?`
+17:27:52 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 3 18 6a 3
+17:27:52 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 4 `Launcher` `?`
+17:27:52 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 4 `?`
+17:27:52 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 4 0 5d 3
+17:27:52 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 5 `Launcher` `?`
+17:27:52 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 5 `?`
+17:27:52 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 5 0 6a 3
+17:27:52 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 6 `Launcher` `?`
+17:27:52 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 6 `?`
+17:27:53 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 6 c 81 3
+17:27:53 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 7 `Launcher` `?`
+17:27:53 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 7 `?`
+17:27:53 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 7 23 5e 2
+17:27:53 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 8 `Launcher` `?`
+17:27:53 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 8 `?`
+17:27:53 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 8 2f 81 3
+17:27:53 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 5 9 `Launcher` `?`
+17:27:53 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 5 9 `?`
+17:27:53 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 5 9 23 81 3
+17:27:53 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 6 0 `Launcher` `?`
+17:27:53 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 6 0 `?`
+17:27:54 100 perf_probe.c:287 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- 12 66 1394 18 24 130
+17:27:54 100 perf_probe.c:291 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- 12 18 19 5d
+17:27:54 100 perf_probe.c:294 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- 12 63 a 0 0 ea
+17:27:54 100 perf_probe.c:298 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- 12 16c 13b0 0 0
+17:27:54 100 perf_probe.c:303 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- 12 934e 543 5dde 270 34e9
+17:27:57 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 6 0 17 227 12
+17:27:57 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 7 0 `Music` `?`
+17:27:57 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 7 0 `?`
+17:27:59 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 7 0 3f 22f 10
+17:27:59 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 8 0 `Launcher` `?`
+17:27:59 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 8 0 `?`
+17:27:59 100 perf_probe.c:287 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- 13 12 1393 16 23 4de
+17:27:59 100 perf_probe.c:291 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- 13 2 aa 115
+17:27:59 100 perf_probe.c:294 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- 13 5d 46 6 0 27
+17:27:59 100 perf_probe.c:298 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- 13 48 2a8f 0 0
+17:27:59 100 perf_probe.c:303 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- 13 1ada 71b 566d 5cc 281f
+17:28:00 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 8 0 115 232 8
+17:28:00 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- 9 0 `TimeStyle` `?`
+17:28:00 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- 9 0 `?`
+17:28:03 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- 9 0 7d 204 c
+17:28:03 100 perf_probe.c:592 PERF screen %u/%u: app %s window %s  <- a 0 `Timeline Future` `?`
+17:28:03 100 perf_probe.c:596 PERF screen %u/%u: modal %s  <- a 0 `?`
+17:28:04 100 perf_probe.c:287 PERF %lu frames %lu in %lu ms: avg %lu max %lu gap %lu ms  <- 14 1d 1394 1a 23 8ed
+17:28:04 100 perf_probe.c:291 PERF %lu keys %lu, key to frame avg %lu max %lu ms  <- 14 2 c7 112
+17:28:04 100 perf_probe.c:294 PERF %lu cpu run %lu wfi %lu stop %lu pct, flash erase %lu write %lu  <- 14 63 47 0 0 28
+17:28:04 100 perf_probe.c:298 PERF %lu clock irq %lu reprog %lu stale %lu repend %lu  <- 14 51 30a1 0 0
+17:28:04 100 perf_probe.c:303 PERF %lu frame parts: app %lu comp %lu flush %lu wait %lu busy %lu us  <- 14 c27 72b 577d a97 2664
+17:28:04 100 perf_probe.c:563 PERF key %u/%u: first %lu last %lu ms, %lu frames  <- a 0 112 24a a
+17:28:04 100 perf_probe.c:615 PERF script done  <- 
+17:28:04 100 perf_probe.c:242 PERF hcill %s  <- `A z126 c101 h25 r1 f0`
+17:28:04 100 perf_probe.c:480 PERF profile samples %lu in interrupts %lu outside %lu  <- 1dd9 2c1 0
+17:28:04 100 perf_probe.c:482 PERF profile all %lu  <- 57b7
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80baa30 5 4 0 1
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80baa70 67 63 56 4e
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80baab0 43 3 2 1
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80baaf0 1 3 0 3f
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80bab30 47 0 2 1
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80bab70 1 0 2 1
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80babb0 3 1 2 1
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80babf0 0 0 3 2
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80bac30 0 0 1 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80bac70 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80bacb0 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80bacf0 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80bad30 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80bad70 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80badb0 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80badf0 0 0 0 0
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bac2e 80b10eb 80ad81f 80ad2a7 805fb1d
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab28 80b0e89 80a79a9 80a79c7 805f081
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa9e 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa74 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bac12 80b10eb 80b10eb 80ad81f 80ba595
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa9e 803f21d 80a79a9 803f21d 80985f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa2 803f8e1 80a79a9 803f8e1 809c72f
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa88 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa9e 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 803f8e1 80a79a9 803f8e1 8044165
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa7c 80b1065 80ad6b7 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 803f8e1 80a79a9 803f8e1 809c72f
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab2e 806756b 80a79a9 80a79c7 806756b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab3a 803f993 80a79a9 80a79c7 803f993
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa96 803fd5b 80a79a9 803fd5b 809c6c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa74 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab3a 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaaa 803f8e1 80a79a9 803f8e1 809c72f
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab3c 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab3a 803fd5b 80a79a9 803fd5b 809c6c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baab4 80b10ad 80a79a9 80ad823 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab22 803f993 80a79a9 80a79c7 803f993
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab90 8053377 804933f 8048fbf 80a6697
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab3c 803f21d 80a79a9 803f21d 80985f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa70 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab3a 803f21d 80a79a9 803f21d 80985f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab36 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b1065 80ad6b7 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa96 80b10ad 80a79a9 80ad823 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa88 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa30 80a79a9 80a79c7 80ad6b7 80b1065
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baab8 803f993 80a79a9 80a79c7 803f993
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa82 803f993 80a79a9 80a79c7 803f993
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaaa 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa9e 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa88 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab22 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa2 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa4e 806756b 80a79a9 80a79c7 806756b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab3a 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa86 803f8e1 80a79a9 803f8e1 809c72f
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa96 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa74 803f993 80a79a9 80a79c7 803f993
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab36 80b10ad 80a79a9 80ad823 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 803f993 80a79a9 80a79c7 803f993
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa7c 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab28 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa6 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab22 80b10ad 80a79a9 80ad823 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab22 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa84 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baab4 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa98 80b10ad 80a79a9 805f191 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa4 80b10ad 80a79a9 805f191 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baab4 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa0 803f8e1 80a79a9 803f8e1 8044165
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b10ad 80a79a9 80ad823 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab26 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaaa 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa74 803f8e1 80a79a9 803f8e1 809c72f
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa96 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa9e 80b0e89 80a79a9 80a79c7 805f081
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa2 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa86 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa70 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baab8 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab26 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa70 80b10ad 80a79a9 80ad823 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa9e 806756b 80a79a9 80a79c7 806756b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa2 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa7c 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab36 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa9e 803fd5b 80a79a9 803fd5b 809c6c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab0a 80ba917 806756b 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa9e 803f8e1 80a79a9 803f8e1 809c72f
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa8c 803f21d 80a79a9 803f21d 80985f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80bab26 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baab4 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa74 80b10ad 80a79a9 80ad823 80b10ad
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa7c 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baab4 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baac0 803f98b 80a79a9 80a79c7 803f98b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa6 803f993 80a79a9 80a79c7 803f993
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa4 803f21d 80a79a9 803f21d 80985f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa7c 80b1065 80ad703 80a79a9 80a79c7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaaa 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa86 803f21d 80a79a9 803f21d 80985f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baa80 805ef95 8095e57 805ef95 80ad293
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80baaa0 80b0e89 80a79a9 80a79c7 80b0e89
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080510 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080550 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080590 0 80 3e 41
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80805d0 37 29 0 40
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080610 1b 0 24 43
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080650 53 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080690 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80806d0 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080710 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080750 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080790 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80807d0 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080810 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080850 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 8080890 0 0 0 0
+17:28:04 100 perf_probe.c:486 PERF zoom %lx: %u %u %u %u  <- 80808d0 0 0 0 0
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805d4 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080604 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805c2 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805cc 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805c0 8005653 80b9de7 80aaad1 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805ee 8005653 80b9de7 809a5f9 8041ed7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b0 8005653 80b9de7 809a5f9 8041ed7
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805d6 8005653 80b9de7 809a5f9 8042207
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808064a 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808060a 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805d8 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805dc 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 8041a9d
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080648 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b8 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080644 8005653 80b9de7 8041a9d 8099175
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080638 8005653 80b9de7 80aaad1 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080606 8005653 80b9de7 80aaad1 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a4 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805ee 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b6 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808064a 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808064a 8005653 80b9de7 809a5f9 80421c9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080648 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805dc 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808064a 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808064a 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805d0 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 8041a9d
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805ce 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805c2 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080638 8005653 80b9de7 809a5f9 80421c9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805c2 8005653 8041ae5 80aa23b 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805e0 8005653 80b9de7 809a5f9 8042207
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805d8 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080616 8005653 80b9de7 809a5f9 80421c9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808060a 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8042207
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b0 8005653 80b9de7 809a5f9 8041e99
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808061a 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080648 8005653 80b9de7 809a5f9 80421c9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805d8 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a8 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b0 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808064a 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b8 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080604 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b2 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 8041a9d
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805d8 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805ce 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b0 8005653 80b9de7 809a5f9 80421c9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805ae 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805c0 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b0 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805e4 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080638 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805e4 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805c8 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 80421c9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080634 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805b4 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080634 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805e4 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805c8 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805ec 8005653 80b9de7 8041a9d 80a7fff
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080604 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a4 8005653 8005653 8041ae5 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805e4 8005653 80b9de7 809a5f9 8041041
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080634 8005653 80b9de7 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808064a 800566d 8041ac5 8041a9d 80aa23b
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 808063e 8005653 80b9de7 80aaad1 809a5f9
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a8 8005653 8005653 80b9de7 8041a9d
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8042207
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 8080650 8005653 80b9de7 809a5f9 8041e99
+17:28:04 100 perf_probe.c:491 PERF stk %lx %lx %lx %lx %lx  <- 80805a0 8005653 8005653 80b9de7 809a5f9
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 80ba800 49b 8043400 2cd 8080400 274
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 809b800 12c 8042000 101 8053000 e1
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 8005400 d7 80aa800 cf 809bc00 bb
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 8097800 b2 809ac00 ae 80b9c00 ad
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 807fc00 99 803d800 8f 80b9800 6c
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 8096c00 62 8043c00 61 803f800 51
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 807dc00 4e 809c400 49 807e800 48
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 809cc00 46 8044000 41 8067400 41
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 809a400 3d 8043800 3c 803d400 36
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 8040000 34 809c800 34 8005800 33
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 8059c00 33 8040c00 32 807c800 31
+17:28:04 100 perf_probe.c:510 PERF pc %lx %lu %lx %lu %lx %lu  <- 8041c00 30 8004800 2f 80a9000 2d
+17:28:05 100 perf_probe.c:741 PERF run %u done  <- 2
+17:28:09 100 perf_probe.c:280 PERF %lu idle %lu ms: run %lu wfi %lu stop %lu pct, clock irq %lu reprog %lu  <- 15 1394 32 26 31 4b 1f1
+17:28:55 100 perf_probe.c:753 PERF bench done  <- 
