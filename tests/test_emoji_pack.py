@@ -103,3 +103,19 @@ def test_emoji_command_refuses_a_bad_bundle(cfg, tmp_path, monkeypatch, capsys):
     bundle = write_bundle(tmp_path / "fw.pbz", crc=1)
     assert cli.main(["watch", "emoji", str(bundle), "--phone", "192.168.1.20"]) == 1
     assert "does not match the manifest" in capsys.readouterr().err
+
+
+def test_unreachable_phone_is_a_message(cfg, tmp_path, monkeypatch, capsys):
+    pytest.importorskip("libpebble2")
+    from libpebble2.exceptions import ConnectionError as PebbleConnectionError
+
+    def refuse(target):
+        raise PebbleConnectionError("[Errno 111] Connection refused")
+
+    monkeypatch.setattr(emoji_pack, "connect", refuse)
+    monkeypatch.setattr(config, "load", lambda: cfg)
+    bundle = write_bundle(tmp_path / "fw.pbz")
+    assert cli.main(["watch", "emoji", str(bundle), "--phone", "192.168.1.20"]) == 1
+    err = capsys.readouterr().err
+    assert err.startswith("plt: no answer from ws://192.168.1.20:")
+    assert "developer connection" in err

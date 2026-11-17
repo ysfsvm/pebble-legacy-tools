@@ -94,15 +94,27 @@ def connect(target):
 def install(pack, target):
     """Send the pack to the watch behind target; returns (watch firmware, seconds)."""
     try:
+        from libpebble2.exceptions import PebbleError
         from libpebble2.services.putbytes import PutBytes, PutBytesType
     except ImportError as error:
         raise PltError(
             "talking to the watch needs libpebble2: install plt with [watch]"
         ) from error
-    pebble = connect(target)
-    version = pebble.watch_info.running.version_tag
+    try:
+        pebble = connect(target)
+        version = pebble.watch_info.running.version_tag
+    except (PebbleError, OSError) as error:
+        raise PltError(
+            f"no answer from {target} ({error or type(error).__name__}): is the "
+            "app's LAN developer connection on, the app open and the watch connected?"
+        ) from error
     start = time.time()
-    PutBytes(pebble, PutBytesType.File, pack, bank=0, filename=EMOJI_FILE).send()
+    try:
+        PutBytes(pebble, PutBytesType.File, pack, bank=0, filename=EMOJI_FILE).send()
+    except (PebbleError, OSError) as error:
+        raise PltError(
+            f"the transfer stopped ({error or type(error).__name__}); run it again"
+        ) from error
     return version, time.time() - start
 
 

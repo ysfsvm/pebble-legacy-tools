@@ -68,7 +68,7 @@ directory into the container.
 With [pipx](https://pipx.pypa.io/), from a release, without git:
 
 ```
-pipx install "pebble-legacy-tools[watch] @ https://github.com/ysfsvm/pebble-legacy-tools/archive/refs/tags/v0.2.0.zip"
+pipx install "pebble-legacy-tools[watch] @ https://github.com/ysfsvm/pebble-legacy-tools/archive/refs/tags/v0.2.1.zip"
 plt --help
 ```
 
