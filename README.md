@@ -65,6 +65,15 @@ directory into the container.
 
 ## Install
 
+With [pipx](https://pipx.pypa.io/), from a release, without git:
+
+```
+pipx install "pebble-legacy-tools[watch] @ https://github.com/ysfsvm/pebble-legacy-tools/archive/refs/tags/v0.2.0.zip"
+plt --help
+```
+
+From a clone:
+
 ```
 git clone https://github.com/ysfsvm/pebble-legacy-tools && cd pebble-legacy-tools
 pip install '.[watch]'
@@ -279,6 +288,25 @@ plt watch shot [OUT.png]
 Saves the watch's screen as a PNG and prints the file's path: OUT.png, or
 `<logs>/watch/<time>-shot.png`.
 
+### plt watch emoji
+
+```
+plt watch emoji BUNDLE [--phone ADDRESS]
+```
+
+Installs the emoji pack on the watch. BUNDLE is a firmware bundle (`.pbz`) that carries
+the pack, checked against its manifest, or the pack file itself. Without `--phone` it goes
+through the phone on adb. With `--phone` it goes straight to the Core app's developer
+connection on the LAN: turn on "Use LAN developer connection" in the app, keep the app open,
+and give the phone's IP address. That is the way for an iPhone, where the app does not
+install the pack itself.
+
+```
+plt watch emoji normal_snowy_s3_v4.47.0-legacy.1.pbz --phone 192.168.1.20
+```
+
+The pack has to come from the bundle of the firmware the watch runs.
+
 ### plt watch flash
 
 ```
@@ -468,7 +496,7 @@ These run on their own with `python -m`; each has `--help`.
 | `plt.coredump` | Print the threads, registers and stacks of a core dump. |
 | `plt.flashlog` | `dump` a flash log over the developer connection; `decode` a dump with a log dictionary. |
 | `plt.devconn` | `version`, `screenshot`, `install` and `measure` over the developer connection. |
-| `plt.emoji_pack` | Install an emoji pack file on a watch or on a running emulator. |
+| `plt.emoji_pack` | Install the emoji pack of a bundle, or a pack file, on a watch or on a running emulator. |
 | `plt.fake_cc2564` | The stand-in for the TI CC2564B on the emulator's Bluetooth UART, with modes for a controller that stops answering. |
 | `plt.stock_boot` | Boot the stock bootloader with any firmware on a NOR image; can preset RTC backup registers through gdb. |
 | `plt.canary` | Boot a build and check that the flash regions the stock firmware owns stay untouched. |
