@@ -202,6 +202,20 @@ def _add_watch(commands):
         help="install although tests or a recovery image are missing; "
         "the reason is recorded with the install",
     )
+    emoji = sub.add_parser(
+        "emoji",
+        help="install the emoji pack",
+        description="Install the emoji pack of a firmware bundle (.pbz), or a pack "
+        "file, on the watch. Without --phone it goes through the phone on adb; "
+        "with --phone, straight to the Core app's LAN developer connection, "
+        "which is how an iPhone gets it.",
+    )
+    emoji.add_argument("bundle", help="firmware bundle (.pbz) or emoji pack file")
+    emoji.add_argument(
+        "--phone",
+        metavar="ADDRESS",
+        help="the phone's IP address on the LAN (or a ws:// URL, or qemu:PORT)",
+    )
     recover = sub.add_parser(
         "recover",
         help="install from the PC over Bluetooth Classic",
@@ -318,6 +332,8 @@ def _dispatch(args, cfg):
             watch.shot(cfg, args.out)
         elif args.action == "flash":
             watch.flash(cfg, args.name, args.force)
+        elif args.action == "emoji":
+            watch.emoji(cfg, args.bundle, args.phone)
         else:
             watch.recover(cfg, args.name)
     elif args.command == "bench":

@@ -1,13 +1,14 @@
 # SPDX-FileCopyrightText: 2026 retake
 # SPDX-License-Identifier: Apache-2.0
-"""The watch behind the phone: status, flash log, screenshot, guarded install, recovery."""
+"""The watch behind the phone: status, flash log, screenshot, guarded install, emoji pack,
+recovery."""
 
 import os
 import re
 import subprocess
 import time
 
-from plt import config, flashlog
+from plt import config, emoji_pack, flashlog
 from plt.emu import tests_passed
 from plt.images import Registry
 from plt.util import PltError, now, run, run_limited, sha256, stamp
@@ -162,6 +163,27 @@ def shot(cfg, out=None):
         reason = (result.stderr.strip().splitlines() or ["no output"])[-1]
         raise PltError(f"screenshot failed: {reason}")
     print(dest)
+
+
+def phone_url(phone):
+    """The developer connection URL for a phone address, a URL or qemu:PORT."""
+    if "://" in phone or phone.startswith("qemu:"):
+        return phone
+    return f"ws://{phone}:{config.DEVCONN_PORT}/"
+
+
+def emoji(cfg, path, phone=None):
+    """Install the emoji pack of a bundle, or a pack file, on the watch."""
+    pack = emoji_pack.read_pack(path)
+    if phone is None:
+        require_phone()
+        url = config.DEVCONN_URL
+    else:
+        url = phone_url(phone)
+    print(f"emoji pack: {len(pack)} bytes, to {url}")
+    version, seconds = emoji_pack.install(pack, url)
+    print(f"watch: {version}")
+    print(f"installed in {seconds:.1f} s")
 
 
 def flash_problems(registry, entry):

@@ -21,6 +21,7 @@ COMMANDS = [
     ["watch", "log"],
     ["watch", "shot"],
     ["watch", "flash"],
+    ["watch", "emoji"],
     ["watch", "recover"],
     ["bench"],
     ["bench", "run"],
