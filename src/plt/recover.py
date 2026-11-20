@@ -217,9 +217,22 @@ def pair(address):
 
 
 def forget(address):
-    """Remove the bond, so that the next window pairs from scratch."""
-    if _is_bluetooth(address):
-        _bluetoothctl("remove", address)
+    """Remove the bond, so that the next window pairs from scratch.
+
+    The kernel can keep a link key that BlueZ no longer lists: the pairing
+    then reports "already paired" and the link fails. Unpairing through the
+    management interface drops that key; it is skipped where btmgmt is missing.
+    """
+    if not _is_bluetooth(address):
+        return
+    _bluetoothctl("remove", address)
+    with contextlib.suppress(OSError):
+        subprocess.run(
+            ["timeout", "5", config.BTMGMT, "unpair", address],
+            check=False,
+            capture_output=True,
+            stdin=subprocess.DEVNULL,
+        )
 
 
 def in_windows(address, windows, action, cut=None):

@@ -4,6 +4,7 @@
 
 import socket
 import struct
+import subprocess
 import sys
 import threading
 import types
@@ -230,6 +231,24 @@ def test_only_bluetooth_addresses_are_paired(monkeypatch):
     assert recover.pair("tcp:127.0.0.1:1")
     assert recover.pair("ws://127.0.0.1:9000/")
     recover.forget("tcp:127.0.0.1:1")
+
+
+def test_forgetting_drops_the_bond_and_the_kernel_key(monkeypatch):
+    address = "00:11:22:33:44:55"
+    commands = []
+
+    def run(command, **kwargs):
+        commands.append(command)
+        if recover.config.BTMGMT in command:
+            raise FileNotFoundError("timeout")
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    monkeypatch.setattr(recover.subprocess, "run", run)
+    recover.forget(address)
+    assert commands == [
+        [recover.config.BLUETOOTHCTL, "remove", address],
+        ["timeout", "5", recover.config.BTMGMT, "unpair", address],
+    ]
 
 
 def test_pairing_scans_only_for_an_unknown_device(monkeypatch):

@@ -20,6 +20,7 @@ PODMAN = "podman"
 GIT = "git"
 ADB = "adb"
 BLUETOOTHCTL = "bluetoothctl"
+BTMGMT = "btmgmt"
 
 # Inside the build container.
 TOOLCHAIN_PREFIX = "/opt/pebbleos-sdk/arm-none-eabi/bin/arm-none-eabi-"
